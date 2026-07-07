@@ -1,5 +1,5 @@
 {
-  "installCommand": "python3 -m pip install --user zensical",
-  "buildCommand": "zensical build",
+  "installCommand": "uv pip install zensical",
+  "buildCommand": "python -m zensical build",
   "outputDirectory": "site"
 }
