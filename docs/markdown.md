@@ -2,7 +2,7 @@
 icon: simple/markdown
 ---
 
-# Markdown in 5min
+# Markdown in 10min
 
 ## Headers
 
