@@ -1,5 +1,5 @@
 {
   "installCommand": "uv pip install --system zensical",
-  "buildCommand": "uv run zensical build",
+  "buildCommand": "zensical build",
   "outputDirectory": "site"
 }
