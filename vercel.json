@@ -1,5 +1,5 @@
 {
-  "installCommand": "pipx install zensical",
+  "installCommand": "python3 -m venv .venv && source .venv/bin/activate && pip install zensical",
   "buildCommand": "zensical build",
   "outputDirectory": "site"
 }
