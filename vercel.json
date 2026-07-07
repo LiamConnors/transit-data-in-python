@@ -1,4 +1,4 @@
 {
-  "buildCommand": "uvx zensical build",
+  "buildCommand": "uvx zensical@latest build",
   "outputDirectory": "site"
 }
