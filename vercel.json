@@ -1,5 +1,5 @@
 {
-  "installCommand": "uv sync",
-  "buildCommand": "uv run zensical build",
+  "installCommand": "pipx install zensical",
+  "buildCommand": "zensical build",
   "outputDirectory": "site"
 }
