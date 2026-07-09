@@ -46,6 +46,7 @@ toggle.name = "Switch to light mode"
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.def_list]
+[project.markdown_extensions.md_in_html]
 [project.markdown_extensions.toc]
 permalink = true
 
