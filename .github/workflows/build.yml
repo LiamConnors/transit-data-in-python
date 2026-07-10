@@ -7,6 +7,18 @@ on:
     branches: [main]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Run Vale
+        uses: vale-cli/vale-action@v2
+        with:
+          files: docs
+          reporter: github-pr-check
+          fail_on_error: true
+
   build:
     runs-on: ubuntu-latest
     steps:
