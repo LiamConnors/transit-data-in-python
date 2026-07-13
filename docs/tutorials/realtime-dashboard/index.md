@@ -3,18 +3,14 @@ icon: lucide/graduation-cap
 description: Learn how to work with realtime transit data in Python by building a bus location dashboard.
 ---
 
-# Build a Realtime Bus Dashboard
+# Build a Realtime Bus Locations Dashboard
 
-In this tutorial, you'll learn how to work with realtime transit data in Python by building a realtime bus locations dashboard from scratch. You'll do it in four steps:
+In this tutorial, you'll learn the basics of realtime transit data and how to work with it in Python by building a realtime bus locations dashboard from scratch. You'll do it in four steps:
 
 1. **Set up** your development environment
 2. **Fetch** live transit data from an API
 3. **Parse** real-time vehicle positions
 4. **Build** an interactive dashboard
-
-## What you'll build
-
-By the end of this tutorial, you'll have a working dashboard that displays realtime bus locations on a map, built with Python and Dash.s
 
 ## Prerequisites
 
