@@ -53,9 +53,3 @@ To install these packages, run:
 ```sh
 pip install requests protobuf dash
 ```
-
-## Checklist
-
-- [ ] I have created a project directory
-- [ ] I have activated a virtual environment
-- [ ] I have installed `requests`, `protobuf`, and `dash`
