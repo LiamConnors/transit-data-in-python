@@ -14,11 +14,11 @@ nav = [
     { "Build a Realtime Bus Dashboard" = [
       { "Introduction" = "tutorials/realtime-dashboard/index.md" },
       { "Set up your development environment" = "tutorials/realtime-dashboard/1-setup.md" },
-      # { "Fetch live transit data" = [
-      #   { "Understand GTFS" = "tutorials/realtime-dashboard/2-fetch-data/1-understand-gtfs.md" },
-      #   { "Get an API key" = "tutorials/realtime-dashboard/2-fetch-data/2-get-api-key.md" },
-      #   { "Your first request" = "tutorials/realtime-dashboard/2-fetch-data/3-first-request.md" },
-      # ]},
+      { "Fetch live transit data" = [
+        { "Understand GTFS" = "tutorials/realtime-dashboard/2-fetch-data/1-understand-gtfs.md" },
+        { "Get an API key" = "tutorials/realtime-dashboard/2-fetch-data/2-get-api-key.md" },
+        { "Your first request" = "tutorials/realtime-dashboard/2-fetch-data/3-first-request.md" },
+      ]},
       # { "Parse real-time vehicle positions" = [
       #   { "Protocol buffers explained" = "tutorials/realtime-dashboard/3-parse-data/1-protobuf-explained.md" },
       #   { "Compile the .proto file" = "tutorials/realtime-dashboard/3-parse-data/2-compile-proto.md" },
