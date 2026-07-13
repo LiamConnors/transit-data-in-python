@@ -13,6 +13,15 @@ CODE_BLOCK_PATTERN = re.compile(r"```sh\n(.*?)```", re.DOTALL)
 SOURCE_PATTERN = re.compile(r"#\s*source:\s*(.+)")
 
 
+def find_line_number(file_path: Path, search_str: str) -> int | None:
+    """Find the line number where a string appears in a file."""
+    content = file_path.read_text()
+    for i, line in enumerate(content.split("\n"), 1):
+        if search_str in line:
+            return i
+    return None
+
+
 def extract_md_commands(docs_dir: Path) -> list[str]:
     """Extract all shell commands from markdown docs in order."""
     commands = []
@@ -153,12 +162,20 @@ def main():
     if in_md_only:
         print("Commands in docs but not in Action:")
         for cmd in sorted(in_md_only):
-            print(f"  + {cmd}")
+            # Find which file and line
+            for md_file in docs_dir.rglob("*.md"):
+                line_num = find_line_number(md_file, cmd)
+                if line_num:
+                    print(f"  + {cmd}")
+                    print(f"    → {md_file}:{line_num}")
+                    break
+        print("\n  Fix: Add these commands to .github/workflows/test-docs.yml")
 
     if in_action_only:
         print("\nCommands in Action but not in docs:")
         for cmd in sorted(in_action_only):
             print(f"  - {cmd}")
+        print("\n  Fix: Either add these commands to your docs, or remove them from .github/workflows/test-docs.yml")
 
     sys.exit(1)
 

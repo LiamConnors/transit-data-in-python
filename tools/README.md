@@ -16,17 +16,6 @@ docs/*.md  ←→  .github/workflows/test-docs.yml
 
 ## Tools
 
-### `test-docs.py`
-
-Run documentation commands locally:
-
-```sh
-python tools/test-docs.py
-python tools/test-docs.py --verbose
-```
-
-Parses all `.md` files in `docs/`, extracts `sh` code blocks, and runs them. Use `<!-- no-test -->` before a code block to skip it.
-
 ### `validate-sync.py`
 
 Check that the GitHub Action matches the docs:
@@ -44,9 +33,7 @@ Fails if:
 
 ## CI integration
 
-Both tools run in CI via `.github/workflows/build.yml`:
-- `check-docs-sync` job runs the validator on every push/PR
-- `test-docs` job (in `test-docs.yml`) runs the actual commands
+- `check-docs-sync` job (in `build.yml`) runs the validator on every push/PR
 
 ## Excluding blocks
 
