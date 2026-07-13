@@ -20,6 +20,6 @@ jobs:
         run: |
           mkdir transit-dashboard
           cd transit-dashboard
-          python3 -m venv .venv
+          python3 -m venv venv
           source .venv/bin/activate
           pip install requests protobuf dash
