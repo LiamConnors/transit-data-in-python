@@ -14,21 +14,9 @@ nav = [
     { "Build a Realtime Bus Dashboard" = [
       { "Introduction" = "tutorials/realtime-dashboard/index.md" },
       { "Set up your development environment" = "tutorials/realtime-dashboard/1-setup.md" },
-      { "Fetch live transit data" = [
-        { "Understand GTFS" = "tutorials/realtime-dashboard/2-fetch-data/1-understand-gtfs.md" },
-        { "Get an API key" = "tutorials/realtime-dashboard/2-fetch-data/2-get-api-key.md" },
-        { "Your first request" = "tutorials/realtime-dashboard/2-fetch-data/3-first-request.md" },
-      ]},
-      # { "Parse real-time vehicle positions" = [
-      #   { "Protocol buffers explained" = "tutorials/realtime-dashboard/3-parse-data/1-protobuf-explained.md" },
-      #   { "Compile the .proto file" = "tutorials/realtime-dashboard/3-parse-data/2-compile-proto.md" },
-      #   { "Parse vehicle positions" = "tutorials/realtime-dashboard/3-parse-data/3-parse-positions.md" },
-      # ]},
-      # { "Build an interactive dashboard" = [
-      #   { "Set up Dash" = "tutorials/realtime-dashboard/4-build-dashboard/1-set-up-framework.md" },
-      #   { "Display vehicle positions" = "tutorials/realtime-dashboard/4-build-dashboard/2-display-vehicles.md" },
-      #   { "Add interactivity" = "tutorials/realtime-dashboard/4-build-dashboard/3-add-interactivity.md" },
-      # ]},
+      { "Fetch live transit data" = "tutorials/realtime-dashboard/2-fetch-data/index.md" },
+      { "Parse real-time vehicle positions" = "tutorials/realtime-dashboard/3-parse-data/index.md" },
+      { "Build an interactive dashboard" = "tutorials/realtime-dashboard/4-build-dashboard/index.md" },
       # { "Publish your app" = [
       #   { "Prepare for deployment" = "tutorials/realtime-dashboard/5-publish/1-prepare-deployment.md" },
       #   { "Deploy" = "tutorials/realtime-dashboard/5-publish/2-deploy.md" },
