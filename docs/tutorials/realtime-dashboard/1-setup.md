@@ -5,14 +5,14 @@ description: Create a project directory and install the packages you'll need.
 
 # Set up your development environment
 
-In this unit, you'll create the directory structure for your project and set up a Python environment.
+In this unit, you'll create the directory for your project and set up a Python environment.
 
 !!! note
     We use Python 3.14 in this tutorial, but any recent Python version (3.10+) will work.
 
 ## Create a project directory
 
-In your terminal, go to where you want to save your project, and then create a new directory:
+In your terminal, go to where you want to build your project, and then create a new directory:
 
 ```sh
 mkdir transit-dashboard
@@ -42,18 +42,17 @@ Next, create and activate a Python virtual environment using [venv](https://docs
 
 ## Install the packages
 
-Now that you have the environment set up and activated, install the packages you'll need. You'll need:
+Now that you have the environment set up and activated, install the following packages:
 
-- `requests` — to fetch data from the API
-- `protobuf` — to deserialize the transit data
-- `dash` — to build the interactive dashboard
+- `requests` — you'll use this to fetch data from the API
+- `protobuf` — you'll use this to deserialize the transit data
+- `dash` — you'll use this to build the interactive dashboard
 
 To install these packages, run:
 
 ```sh
 pip install requests protobuf dash
 ```
-
 
 ## Checklist
 
