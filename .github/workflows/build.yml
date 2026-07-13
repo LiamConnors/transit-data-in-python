@@ -25,3 +25,19 @@ jobs:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 
       - run: uvx zensical@latest build
+
+  check-doc-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Regenerate test workflow
+        run: python tools/generate-doc-tests.py
+      - name: Check for changes
+        run: |
+          if [ -n "$(git diff .github/workflows/test-docs.yml)" ]; then
+            echo "::error::test-docs.yml is out of date. Run: python tools/generate-doc-tests.py"
+            exit 1
+          fi

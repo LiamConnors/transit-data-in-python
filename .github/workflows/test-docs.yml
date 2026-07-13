@@ -1,0 +1,30 @@
+name: Test documentation commands
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: "Set up your development environment - block 1"
+        run: |
+          mkdir transit-dashboard
+          cd transit-dashboard
+
+      - name: "Set up your development environment - block 2"
+        run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+
+      - name: "Set up your development environment - block 3"
+        run: |
+          pip install requests protobuf dash
