@@ -44,9 +44,9 @@ Next, create and activate a Python virtual environment using [venv](https://docs
 
 Now that you have the environment set up and activated, install the following packages:
 
-- `requests` — you'll use this to fetch data from the API
-- `protobuf` — you'll use this to deserialize the transit data
-- `dash` — you'll use this to build the interactive dashboard
+- `requests` — to fetch data from the API
+- `protobuf` — to deserialize the transit data
+- `dash` — to build the interactive dashboard
 
 To install these packages, run:
 
