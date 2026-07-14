@@ -35,3 +35,11 @@ jobs:
           python-version: "3.12"
       - run: pip install pyyaml
       - run: python tools/validate-sync.py
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/ruff-action@v4.0.0
+        with:
+          args: "format --check docs/"
