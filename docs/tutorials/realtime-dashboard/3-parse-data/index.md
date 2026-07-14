@@ -37,10 +37,6 @@ for entity in feed.entity:
               f"speed={position.speed}")
 ```
 
-## The code explained
-
-This example code:
-
 - Lines 1-3: Import required modules (`os`, `requests`, and `gtfs_realtime_pb2`)
 - Line 5: Define the API endpoint URL. This comes from the STM developer portal. It is displayed in **APIs** > **Données Ouverte iBUS - GTFS-Realtime (v2.0)** > **Specs** > **Positions**.
 - Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environment variable we set in the previous section. 
