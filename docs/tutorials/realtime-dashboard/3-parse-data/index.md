@@ -5,13 +5,13 @@ description: Parse GTFS Realtime data from the STM API.
 
 # Parse real-time vehicle positions
 
-In the previous unit, we fetched data from the STM API and got back binary data. Now let's parse it into something we can use.
+In the previous section, we made a request to the STM API for Realtime transit data. Now let's parse it into something we can use.
 
 ## The code
 
 Create a file called `parse_positions.py` and add the following code:
 
-```python
+```python linenums="1"
 import os
 import requests
 from google.transit import gtfs_realtime_pb2
@@ -39,11 +39,14 @@ for entity in feed.entity:
 
 ## The code explained
 
-- We import `gtfs_realtime_pb2` from the installed package
-- We make a GET request to the vehicle positions endpoint
-- We create a `FeedMessage` — the root type in the GTFS Realtime schema
-- We call `ParseFromString()` to deserialize the binary data
-- We loop through the entities and extract vehicle positions
+This example code:
+
+- Lines 1-3: Import required modules (`os`, `requests`, and `gtfs_realtime_pb2`)
+- Line 5: Define the API endpoint URL. This comes from the STM developer portal. It is displayed in **APIs** > **Données Ouverte iBUS - GTFS-Realtime (v2.0)** > **Specs** > **Positions**.
+- Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environnment variable we set in the previous section. 
+- Line 11: Make GET request to the endpoint using `requests`
+- Lines 13-14: Create a `FeedMessage` and parse the binary response data
+- Lines 16-24: Loop through entities and extract vehicle positions (latitude, longitude, speed)
 
 ## Run it
 

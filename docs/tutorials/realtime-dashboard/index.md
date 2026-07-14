@@ -5,7 +5,7 @@ description: Learn how to work with realtime transit data in Python by building 
 
 # Build a Realtime Bus Locations Dashboard
 
-In this tutorial, you'll learn the basics of realtime transit data and how to work with it in Python by building a realtime bus locations dashboard from scratch. You'll do it in four steps:
+After completing this tutorial, you'll understand the basics of realtime transit data and know how to work with it in Python by building a realtime bus locations dashboard from scratch. You'll do it in four steps:
 
 1. **Set up** your development environment
 2. **Fetch** live transit data from an API
@@ -14,7 +14,6 @@ In this tutorial, you'll learn the basics of realtime transit data and how to wo
 
 ## Prerequisites
 
+- Basic knowlege of Python and the command line
 - [Python 3.10+](https://www.python.org/downloads/)
-- Familiarity with Python functions and dictionaries
-- Comfort using the terminal (running commands, navigating directories)
 - A code editor like [VS Code](https://code.visualstudio.com/)
