@@ -1,5 +1,4 @@
 preview = true
-include = ["*.py", "*.md"]
 
 [format]
 docstring-code-format = true
