@@ -59,6 +59,3 @@ Vehicle 80014: lat=45.522, lon=-73.578, speed=0.0
 ...
 ```
 
-## Summary
-
-You fetched realtime bus location data from the STM API and parsed it in Python. The data includes the latitude, longitude, and speed of each bus currently in transit.
