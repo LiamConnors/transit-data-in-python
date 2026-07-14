@@ -8,11 +8,11 @@ description: Create a project directory and install the packages you'll need.
 In this unit, you'll create the directory for your project and set up a Python environment.
 
 !!! note
-    We use Python 3.14 in this tutorial, but any recent Python version (3.10+) will work.
+    This tutorial uses Python 3.14, but any recent Python version (3.10+) will work.
 
 ## Create a project directory
 
-In your terminal, go to where you want to build your project, and then create a new directory:
+In your terminal, go to where you want to build your project, then create a new directory, and `cd` into that directory:
 
 ```sh
 mkdir transit-dashboard
@@ -52,4 +52,24 @@ To install these packages, run:
 
 ```sh
 pip install requests protobuf dash
+```
+
+You should see a success message for each package installed.
+
+## Validate the environment
+
+Finally, run `pip list` and you should see a list of packages like the following that includes `requests`, `gtfs-realtime-bindings`.
+
+```sh
+Package                Version
+---------------------- ---------
+annotated-types        0.7.0
+blinker                1.9.0
+certifi                2026.6.17
+charset-normalizer     3.4.9
+click                  8.4.2
+dash                   4.4.0
+Flask                  3.1.3
+gtfs-realtime-bindings 2.1.0
+...
 ```
