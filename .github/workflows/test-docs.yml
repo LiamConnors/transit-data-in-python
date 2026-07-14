@@ -22,4 +22,16 @@ jobs:
           cd transit-dashboard
           python3 -m venv .venv
           source .venv/bin/activate
-          pip install requests protobuf dash
+          pip install requests gtfs-realtime-bindings dash
+
+      # source: docs/tutorials/realtime-dashboard/2-fetch-data/index.md
+      - name: "Fetch live transit data"
+        run: |
+          cd transit-dashboard
+          source .venv/bin/activate
+
+      # source: docs/tutorials/realtime-dashboard/3-parse-data/index.md
+      - name: "Parse real-time vehicle positions"
+        run: |
+          cd transit-dashboard
+          source .venv/bin/activate
