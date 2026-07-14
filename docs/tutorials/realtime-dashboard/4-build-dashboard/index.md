@@ -22,8 +22,15 @@ from google.transit import gtfs_realtime_pb2
 URL = "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions"
 CENTER = {"lat": 45.5236, "lon": -73.5830}
 
+
 def fetch_vehicles():
-    resp = requests.get(URL, headers={"accept": "application/x-protobuf", "apiKey": os.environ["STM_API_KEY"]})
+    resp = requests.get(
+        URL,
+        headers={
+            "accept": "application/x-protobuf",
+            "apiKey": os.environ["STM_API_KEY"],
+        },
+    )
     feed = gtfs_realtime_pb2.FeedMessage()
     feed.ParseFromString(resp.content)
 
@@ -39,25 +46,39 @@ def fetch_vehicles():
         hovers.append(f"Route {label} - {v.position.speed} km/h")
     return lats, lons, labels, hovers
 
+
 app = dash.Dash(__name__)
-app.layout = html.Div([
-    dcc.Graph(id="map", style={"height": "100vh"}, config={"scrollZoom": True}),
-    dcc.Interval(id="refresh", interval=10_000),
-], style={"margin": 0, "padding": 0, "height": "100vh", "overflow": "hidden"})
+app.layout = html.Div(
+    [
+        dcc.Graph(id="map", style={"height": "100vh"}, config={"scrollZoom": True}),
+        dcc.Interval(id="refresh", interval=10_000),
+    ],
+    style={"margin": 0, "padding": 0, "height": "100vh", "overflow": "hidden"},
+)
+
 
 @app.callback(Output("map", "figure"), Input("refresh", "n_intervals"))
 def update(_):
     lats, lons, labels, hovers = fetch_vehicles()
-    fig = go.Figure(go.Scattermap(
-        lat=lats, lon=lons, text=labels, hovertext=hovers,
-        mode="markers+text", textposition="top center",
-        marker=dict(size=12, color="red", allowoverlap=True),
-    ))
+    fig = go.Figure(
+        go.Scattermap(
+            lat=lats,
+            lon=lons,
+            text=labels,
+            hovertext=hovers,
+            mode="markers+text",
+            textposition="top center",
+            marker=dict(size=12, color="red", allowoverlap=True),
+        )
+    )
     fig.update_layout(
         map=dict(style="open-street-map", center=CENTER, zoom=14),
-        margin=dict(r=0, t=0, l=0, b=0), paper_bgcolor="white", uirevision="keep-view",
+        margin=dict(r=0, t=0, l=0, b=0),
+        paper_bgcolor="white",
+        uirevision="keep-view",
     )
     return fig
+
 
 if __name__ == "__main__":
     app.run(debug=True)

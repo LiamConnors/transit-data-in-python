@@ -31,10 +31,12 @@ for entity in feed.entity:
     if entity.HasField("vehicle"):
         vehicle = entity.vehicle
         position = vehicle.position
-        print(f"Vehicle {vehicle.vehicle.id}: "
-              f"lat={position.latitude}, "
-              f"lon={position.longitude}, "
-              f"speed={position.speed}")
+        print(
+            f"Vehicle {vehicle.vehicle.id}: "
+            f"lat={position.latitude}, "
+            f"lon={position.longitude}, "
+            f"speed={position.speed}"
+        )
 ```
 
 - Lines 1-3: Import required modules (`os`, `requests`, and `gtfs_realtime_pb2`)
