@@ -43,7 +43,7 @@ This example code:
 
 - Lines 1-3: Import required modules (`os`, `requests`, and `gtfs_realtime_pb2`)
 - Line 5: Define the API endpoint URL. This comes from the STM developer portal. It is displayed in **APIs** > **Données Ouverte iBUS - GTFS-Realtime (v2.0)** > **Specs** > **Positions**.
-- Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environnment variable we set in the previous section. 
+- Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environment variable we set in the previous section. 
 - Line 11: Make GET request to the endpoint using `requests`
 - Lines 13-14: Create a `FeedMessage` and parse the binary response data
 - Lines 16-24: Loop through entities and extract vehicle positions (latitude, longitude, speed)

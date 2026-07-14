@@ -14,6 +14,6 @@ After completing this tutorial, you'll understand the basics of realtime transit
 
 ## Prerequisites
 
-- Basic knowlege of Python and the command line
+- Basic knowledge of Python and the command line
 - [Python 3.10+](https://www.python.org/downloads/)
 - A code editor like [VS Code](https://code.visualstudio.com/)

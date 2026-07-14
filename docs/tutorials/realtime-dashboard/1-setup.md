@@ -56,6 +56,6 @@ pip install requests gtfs-realtime-bindings dash
 
 You should see a success message for each package installed.
 
-## Validate the envioronment
+## Validate the environment
 
 Finally, run `pip list` and you should see a list of packages that includes `requests`, `gtfs-realtime-bindings`. You'll also see other packages listed, as each of the packages the project requires also depends on other packages.

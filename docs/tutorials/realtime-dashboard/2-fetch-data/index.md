@@ -77,7 +77,7 @@ headers = {
 response = requests.get(url, headers=headers)
 print(f"Status: {response.status_code}")
 print(f"Content length: {len(response.content)} bytes")
-print(f"First 100 charachters: {response.content[:100]}")
+print(f"First 100 characters: {response.content[:100]}")
 ```
 
 This example code:
@@ -102,7 +102,7 @@ You'll see output like this:
 ```
 Status: 200
 Content length: 58163 bytes
-First 100 charachters: b'\n\r\n\x032.0\x10\x00\x18\xd2\xa9\xd9\xd2\x06\x12b\n\x0539076"Y\n%\n\t301233716\x12\x0811:14:00\x1a\x0820260714*\x02320\x0
+First 100 characters: b'\n\r\n\x032.0\x10\x00\x18\xd2\xa9\xd9\xd2\x06\x12b\n\x0539076"Y\n%\n\t301233716\x12\x0811:14:00\x1a\x0820260714*\x02320\x0
 ```
 
 - Status 200 means the request was a success. 
