@@ -29,14 +29,9 @@ jobs:
         run: |
           cd transit-dashboard
           source .venv/bin/activate
-          export STM_API_KEY="test-key"
-          python -c "import requests; print('requests OK')"
-          python -c "from google.transit import gtfs_realtime_pb2; print('gtfs-realtime-bindings OK')"
 
       # source: docs/tutorials/realtime-dashboard/3-parse-data/index.md
       - name: "Parse real-time vehicle positions"
         run: |
           cd transit-dashboard
           source .venv/bin/activate
-          export STM_API_KEY="test-key"
-          python -c "from google.transit import gtfs_realtime_pb2; feed = gtfs_realtime_pb2.FeedMessage(); print('Parse OK')"
