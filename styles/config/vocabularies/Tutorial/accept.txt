@@ -1,0 +1,9 @@
+[Rr]ealtime
+[Pp]lotly
+venv
+hardcode
+APIs
+(?i)GTFS
+gtfs_
+Ouverte
+iBUS

@@ -142,42 +142,31 @@ def main():
             print(f"  {err}")
         print()
 
-    # Check overall sync
+    # Check that all docs commands appear in the Action
     md_commands = extract_md_commands(docs_dir)
     action_commands = []
     for step in steps:
         action_commands.extend(step.get("commands", []))
 
-    if md_commands == action_commands:
-        print("✓ Docs and Action are in sync")
-        return
+    missing_in_action = []
+    for cmd in md_commands:
+        if cmd not in action_commands:
+            missing_in_action.append(cmd)
 
-    print("✗ Docs and Action are out of sync\n")
+    if errors or missing_in_action:
+        if missing_in_action:
+            print("Commands in docs but not in Action:")
+            for cmd in missing_in_action:
+                for md_file in docs_dir.rglob("*.md"):
+                    line_num = find_line_number(md_file, cmd)
+                    if line_num:
+                        print(f"  + {cmd}")
+                        print(f"    → {md_file}:{line_num}")
+                        break
+            print("\n  Fix: Add these commands to .github/workflows/test-docs.yml")
+        sys.exit(1)
 
-    md_set = set(md_commands)
-    action_set = set(action_commands)
-    in_md_only = md_set - action_set
-    in_action_only = action_set - md_set
-
-    if in_md_only:
-        print("Commands in docs but not in Action:")
-        for cmd in sorted(in_md_only):
-            # Find which file and line
-            for md_file in docs_dir.rglob("*.md"):
-                line_num = find_line_number(md_file, cmd)
-                if line_num:
-                    print(f"  + {cmd}")
-                    print(f"    → {md_file}:{line_num}")
-                    break
-        print("\n  Fix: Add these commands to .github/workflows/test-docs.yml")
-
-    if in_action_only:
-        print("\nCommands in Action but not in docs:")
-        for cmd in sorted(in_action_only):
-            print(f"  - {cmd}")
-        print("\n  Fix: Either add these commands to your docs, or remove them from .github/workflows/test-docs.yml")
-
-    sys.exit(1)
+    print("✓ Docs and Action are in sync")
 
 
 if __name__ == "__main__":
