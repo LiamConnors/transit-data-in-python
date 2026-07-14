@@ -86,7 +86,7 @@ This example code:
 - Line 4: Define the API endpoint URL
 - Lines 5-8: Create headers dictionary with accept header and API key from environment variable
 - Line 10: Make GET request to the endpoint
-- Lines 11-12: Print status code, content length, and first 100 characters
+- Lines 11-13: Print status code, content length, and first 100 characters
 
 ### Run it
 

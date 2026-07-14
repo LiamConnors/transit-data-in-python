@@ -44,7 +44,7 @@ for entity in feed.entity:
 - Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environment variable we set in the previous section. 
 - Line 11: Make GET request to the endpoint using `requests`
 - Lines 13-14: Create a `FeedMessage` and parse the binary response data
-- Lines 16-24: Loop through entities and extract vehicle positions (latitude, longitude, speed)
+- Lines 16-25: Loop through entities and extract vehicle positions (latitude, longitude, speed)
 
 ## Run it
 

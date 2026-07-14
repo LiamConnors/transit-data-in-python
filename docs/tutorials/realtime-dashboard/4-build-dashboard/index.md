@@ -88,10 +88,10 @@ This example code:
 
 - Lines 1-6: Import required modules (os, dash, plotly, requests, and gtfs_realtime_pb2)
 - Lines 8-9: Define API endpoint URL and map center coordinates
-- Lines 11-40: Fetch vehicle positions from STM API and parse Protocol Buffer response
-- Lines 42-46: Create Dash app with full-screen map layout. The `dcc.Graph` component displays the map and the `dcc.Interval` refreshes the data every 10 seconds. 
-- Lines 48-60: Define callback to update map every 10 seconds with vehicle positions
-- Lines 62-63: Run the app in debug mode
+- Lines 12-33: Fetch vehicle positions from STM API and parse Protocol Buffer response
+- Lines 36-43: Create Dash app with full-screen map layout. The `dcc.Graph` component displays the map and the `dcc.Interval` refreshes the data every 10 seconds. 
+- Lines 46-66: Define callback to update map every 10 seconds with vehicle positions
+- Lines 69-70: Run the app in debug mode
 
 ## Run it
 
