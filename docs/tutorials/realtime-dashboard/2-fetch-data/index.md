@@ -104,7 +104,7 @@ First 100 characters: b'\n\r\n\x032.0\x10\x00\x18\xd2\xa9\xd9\xd2\x06\x12b\n\x05
 ```
 
 - Status 200 means the request was a success. 
-- Note how we can't tell from looking at the first 100 characters that it is transit data at all. This is because content returned by the API is protocol buffer data. We need to use a library to parse it correctly.
+- The first 100 characters are protocol buffer data, not readable text. That's normal — you need a library to parse it into something human-readable.
 
 Congratulations, you've made your first request to a GTFS Realtime API and received live transit data! Next, you'll learn how to parse the response into readable vehicle positions.
 
