@@ -60,6 +60,7 @@ You should see a success message for each package installed.
 
 Finally, run `pip list` and you should see a list of packages like the following that includes `requests`, `gtfs-realtime-bindings`, and `dash`.
 
+<!-- no-test -->
 ```sh
 Package                Version
 ---------------------- ---------

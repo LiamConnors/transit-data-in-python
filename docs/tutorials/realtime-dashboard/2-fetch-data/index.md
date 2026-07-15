@@ -44,7 +44,7 @@ Open the `transit-dashboard` directory in VS Code or your preferred editor.
 
 ### Set your API key
 
-First, set your API key as an environment variable so you don't hardcode it in your script.
+First, set your API key as an environment variable:
 
 === "macOS / Linux"
 
@@ -80,13 +80,11 @@ print(f"Content length: {len(response.content)} bytes")
 print(f"First 100 characters: {response.content[:100]}")
 ```
 
-This example code:
-
 - Lines 1-2: Import required modules (`os` and `requests`)
-- Line 4: Define the API endpoint URL
+- Line 4: Define the API endpoint URL. This comes from the STM Realtime API documentation.
 - Lines 5-8: Create headers dictionary with accept header and API key from environment variable
-- Line 10: Make GET request to the endpoint
-- Lines 11-13: Print status code, content length, and first 100 characters
+- Line 10: Make a GET request to the endpoint and store the response in the `response` variable
+- Lines 11-13: The `response` variable is a `Response` object. Print its status code, content length, and the first 100 characters of the content.
 
 ### Run it
 
@@ -102,9 +100,11 @@ You'll see output like this:
 ```
 Status: 200
 Content length: 58163 bytes
-First 100 characters: b'\n\r\n\x032.0\x10\x00\x18\xd2\xa9\xd9\xd2\x06\x12b\n\x0539076"Y\n%\n\t301233716\x12\x0811:14:00\x1a\x0820260714*\x02320\x0
+First 100 characters: b'\n\r\n\x032.0\x10\x00\x18\xd2\xa9\xd9\xd2\x06\x12b\n\x0539076"Y\n%\n\t301233716\x12\x0811:14:00\x1a\x0820260714*\x02320\x0...
 ```
 
 - Status 200 means the request was a success. 
 - Note how we can't tell from looking at the first 100 characters that it is transit data at all. This is because content returned by the API is protocol buffer data. We need to use a library to parse it correctly.
+
+Congratulations, you've made your first request to a GTFS Realtime API and received live transit data! Next, you'll learn how to parse the response into readable vehicle positions.
 
