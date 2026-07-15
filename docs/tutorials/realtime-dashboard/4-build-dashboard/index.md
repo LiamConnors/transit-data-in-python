@@ -102,3 +102,5 @@ python app.py
 
 Open [http://localhost:8050](http://localhost:8050) in your browser. You should see a map of the Plateau area with labeled dots representing buses, each showing its route number.
 
+Congratulations, you've built a realtime bus locations dashboard from scratch! You've learned the basics of GTFS Realtime data, fetched live vehicle positions, parsed Protocol Buffer responses, and displayed them on an interactive map.
+
