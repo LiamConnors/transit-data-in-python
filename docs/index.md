@@ -6,6 +6,6 @@ icon: lucide/book-open
 
 Welcome to the Transit data in Python site. This site provides tutorials, guides, and reference material for working with transit data.
 
-## Get Started
+## Contents
 
-- [Tutorials](tutorials/index.md) - Step-by-step learning for beginners
+- [Tutorials](tutorials/index.md) - Learn about transit data by building a live bus tracking dashboard.
