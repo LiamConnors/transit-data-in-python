@@ -1,6 +1,6 @@
 # Transit data in Python
 
-Static docs site for working with GFTS transit data in Python.
+Static docs site for working with GTFS transit data in Python.
 
 ## Overview
 

@@ -1,10 +1,10 @@
 # ============================================================================
-# GFTS Documentation Site Configuration
+# GTFS Documentation Site Configuration
 # ============================================================================
 
 [project]
 site_name = "Transit data in Python"
-site_description = "Tutorials and guides for working with GFTS data in Python"
+site_description = "Tutorials and guides for working with GTFS data in Python"
 site_author = ""
 
 # Navigation structure
