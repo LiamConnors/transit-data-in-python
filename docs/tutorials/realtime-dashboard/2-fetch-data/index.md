@@ -29,7 +29,7 @@ GTFS Realtime provides several feed types:
 
 ## Get an API key
 
-To access realtime data from a transit organisation, you'll generally need an API key. For a key to access STM Realtime data, sign up at the [STM Developer Portal](https://portail.developpeurs.stm.info/apihub/).
+To access realtime data from a transit organisation, you'll generally need an API key. To get a key for STM Realtime data, sign up at the [STM Developer Portal](https://portail.developpeurs.stm.info/apihub/).
 
 Then:
 

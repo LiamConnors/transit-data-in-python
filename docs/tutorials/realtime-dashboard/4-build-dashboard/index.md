@@ -43,7 +43,7 @@ def fetch_vehicles():
         lats.append(v.position.latitude)
         lons.append(v.position.longitude)
         labels.append(label)
-        hovers.append(f"Route {label} - {v.position.speed} km/h")
+        hovers.append(f"Route {label} - {v.position.speed * 3.6:.0f} km/h")
     return lats, lons, labels, hovers
 
 
@@ -88,7 +88,7 @@ This example code:
 
 - Lines 1-6: Import required modules (`os`, `dash`, `plotly`, `requests`, and `gtfs_realtime_pb2`)
 - Lines 8-9: Define API endpoint URL and where the map should centre
-- Lines 12-33: Fetch vehicle positions from STM API and parse Protocol Buffer response using `gtfs_realtime_pb2`.
+- Lines 12-33: Fetch vehicle positions from STM API and parse Protocol Buffer response using `gtfs_realtime_pb2`. GTFS Realtime reports `position.speed` in meters per second, so line 32 multiplies it by 3.6 to convert it to km/h for the hover text.
 - Lines 36-43: Create Dash app with full-screen map layout. The `dcc.Graph` component displays the map and the `dcc.Interval` refreshes the data every 10 seconds. 
 - Lines 46-66: Define callback to update map every 10 seconds with vehicle positions. The `Output("map", "figure")` wires the return value to the `figure` property of the `dcc.Graph(id="map")` component. The `dcc.Interval`'s `n_intervals` input triggers the callback, which fetches vehicle positions by calling the `fetch_vehicles` function. It then creates a `Scattermap` figure with the vehicle positions and labels, and returns it.
 - Lines 69-70: Run the app in debug mode
