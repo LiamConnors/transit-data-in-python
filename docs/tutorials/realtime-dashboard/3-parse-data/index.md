@@ -44,8 +44,8 @@ for entity in feed.entity:
 - Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environment variable you set in the previous section.
 - Line 11: Make GET request to the endpoint using `requests`
 - Lines 13-14: Create an empty `FeedMessage` and parse the binary response into it. A GTFS Realtime feed is a `FeedMessage` containing a list of `entity` records. Each entity can represent different things — a vehicle position, a trip update, or a service alert.
-- Line 17: Before accessing the `vehicle` field on an entity, the code checks `HasField("vehicle")` to make sure this entity actually carries a vehicle position. Not all entities do — some might be alerts or updates — so this guard prevents runtime errors.
-- Lines 18-25: Each vehicle entity carries a `VehiclePosition` with a `position` (lat/lon/speed) and a `vehicle` descriptor. In `vehicle.vehicle.id`: the variable `vehicle` is the `VehiclePosition`, `.vehicle` is the `VehicleDescriptor`, and `.id` is the bus number.
+- Line 17: Before accessing `entity.vehicle` (the `VehiclePosition`), the code checks `HasField("vehicle")` to make sure this entity actually carries a vehicle position. Not all entities do — some might be alerts or updates — so this guard prevents runtime errors.
+- Lines 18-25: Each vehicle entity carries a `VehiclePosition`. Its `vehicle` field is a `VehicleDescriptor` with the bus's id — so `vehicle.vehicle.id` is the bus number. The `position` field holds lat/lon/speed.
 
 ## Run it
 
