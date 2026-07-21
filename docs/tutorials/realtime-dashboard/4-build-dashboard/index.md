@@ -39,7 +39,9 @@ def fetch_vehicles():
         if not e.HasField("vehicle"):
             continue
         v = e.vehicle
-        label = v.trip.route_id if v.HasField("trip") else v.vehicle.id
+        if not v.HasField("trip"):
+            continue
+        label = v.trip.route_id
         lats.append(v.position.latitude)
         lons.append(v.position.longitude)
         labels.append(label)
