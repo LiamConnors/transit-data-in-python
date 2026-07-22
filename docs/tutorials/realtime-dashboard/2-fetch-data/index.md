@@ -50,14 +50,14 @@ First, set your API key as an environment variable:
 
     <!-- no-test -->
     ```sh
-    export STM_API_KEY="your-api-key-here"
+    export STM_API_KEY="<your-api-key-here>"
     ```
 
 === "Windows (PowerShell)"
 
     <!-- no-test -->
     ```powershell
-    $env:STM_API_KEY="your-api-key-here"
+    $env:STM_API_KEY="<your-api-key-here>"
     ```
 
 ### Write the code
@@ -81,8 +81,8 @@ print(f"First 100 characters: {response.content[:100]}")
 ```
 
 - Lines 1-2: Import required modules (`os` and `requests`)
-- Line 4: Define the API endpoint URL. This comes from the STM Realtime API documentation.
-- Lines 5-8: Create headers dictionary with accept header and API key from environment variable
+- Line 4: Define the API endpoint URL. This comes from the STM developer portal (it is displayed in **APIs** > **Données Ouverte iBUS - GTFS-Realtime (v2.0)** > **Specs** > **Positions**).
+- Lines 5-8: Create headers dictionary with accept header and the API key loaded from environment variable
 - Line 10: Make a GET request to the endpoint and store the response in the `response` variable
 - Lines 11-13: The `response` variable is a `Response` object. Print its status code, content length, and the first 100 characters of the content.
 

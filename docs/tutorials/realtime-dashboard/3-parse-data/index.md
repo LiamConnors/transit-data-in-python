@@ -40,11 +40,11 @@ for entity in feed.entity:
 ```
 
 - Lines 1-3: Import required modules (`os`, `requests`, and `gtfs_realtime_pb2`)
-- Line 5: Define the API endpoint URL. This comes from the STM developer portal. It is displayed in **APIs** > **Données Ouverte iBUS - GTFS-Realtime (v2.0)** > **Specs** > **Positions**.
-- Lines 6-9: Create headers dictionary with accept header and API key from environment variable. `os.environ` loads the API key from the environment variable you set in the previous section.
+- Line 5: Define the API endpoint URL. This is the same Vehicle Positions endpoint from the previous section and can be found in the STM developer portal.
+- Lines 6-9: Create headers dictionary with accept header and the API key loaded from the environment variable
 - Line 11: Make GET request to the endpoint using `requests`
 - Lines 13-14: Create an empty `FeedMessage` and parse the binary response into it. A GTFS Realtime feed is a `FeedMessage` containing a list of `entity` records. Each entity can represent different things — a vehicle position, a trip update, or a service alert.
-- Line 17: Before accessing `entity.vehicle` (the `VehiclePosition`), the code checks `HasField("vehicle")` to make sure this entity actually carries a vehicle position. Not all entities do — some might be alerts or updates — so this guard prevents runtime errors.
+- Line 17: Before accessing `entity.vehicle` (the `VehiclePosition`), the code checks `HasField("vehicle")` to make sure this entity actually carries a vehicle position.
 - Lines 18-25: Each vehicle entity carries a `VehiclePosition`. Its `vehicle` field is a `VehicleDescriptor` with the bus's id — so `vehicle.vehicle.id` is the bus number. The `position` field holds lat/lon/speed.
 
 ## Run it

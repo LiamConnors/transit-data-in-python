@@ -77,7 +77,7 @@ def update(_):
         map=dict(style="open-street-map", center=CENTER, zoom=14),
         margin=dict(r=0, t=0, l=0, b=0),
         paper_bgcolor="white",
-        uirevision="keep-view",
+        uirevision="keep-view",  # preserve zoom/pan across refreshes
     )
     return fig
 
@@ -89,11 +89,11 @@ if __name__ == "__main__":
 This example code:
 
 - Lines 1-6: Import required modules (`os`, `dash`, `plotly`, `requests`, and `gtfs_realtime_pb2`)
-- Lines 8-9: Define API endpoint URL and where the map should centre
-- Lines 12-33: Fetch vehicle positions from STM API and parse Protocol Buffer response using `gtfs_realtime_pb2`. GTFS Realtime reports `position.speed` in meters per second, so line 32 multiplies it by 3.6 to convert it to km/h for the hover text.
-- Lines 36-43: Create Dash app with full-screen map layout. The `dcc.Graph` component displays the map and the `dcc.Interval` refreshes the data every 10 seconds.
-- Lines 46-66: Define callback to update map every 10 seconds with vehicle positions. The `Output("map", "figure")` wires the return value to the `figure` property of the `dcc.Graph(id="map")` component. The `dcc.Interval`'s `n_intervals` input triggers the callback, which fetches vehicle positions by calling the `fetch_vehicles` function. It then creates a `Scattermap` figure with the vehicle positions and labels, and returns it.
-- Lines 69-70: Run the app in debug mode
+- Lines 8-9: Define API endpoint URL and where the map should be centered
+- Lines 11-34: Fetch vehicle positions and parse the Protocol Buffer response. GTFS Realtime reports `position.speed` in meters per second, so the hover text multiplies by 3.6 for km/h.
+- Lines 36-43: Create Dash app with full-screen map layout. `dcc.Graph` displays the map, `dcc.Interval` refreshes the data every 10 seconds.
+- Lines 45-65: Define callback to update map every 10 seconds with vehicle positions. `Output("map", "figure")` declares that the return value updates the `figure` property of the map component. The `dcc.Interval`'s `n_intervals` is the input that triggers the callback, which calls `fetch_vehicles()` and builds a `Scattermap` figure. `uirevision="keep-view"` preserves zoom and pan across refreshes.
+- Lines 67-68: Run the app in debug mode
 
 ## Run it
 
@@ -102,7 +102,7 @@ This example code:
 python app.py
 ```
 
-Open [http://localhost:8050](http://localhost:8050) in your browser. You should see a map of the Plateau area with labeled dots representing buses, each showing its route number.
+Open [http://localhost:8050](http://localhost:8050) in your browser. You should see a map of Montreal with labeled dots representing buses, each showing its route number.
 
 Congratulations, you've built a realtime bus locations dashboard from scratch! You've learned the basics of GTFS Realtime data, fetched live vehicle positions, parsed Protocol Buffer responses, and displayed them on an interactive map.
 
