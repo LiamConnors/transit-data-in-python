@@ -68,13 +68,13 @@ Create a file called `first_request.py` and add the following code:
 import os
 import requests
 
-url = "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions"
+URL = "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions"
 headers = {
     "accept": "application/x-protobuf",
     "apiKey": os.environ["STM_API_KEY"],
 }
 
-response = requests.get(url, headers=headers)
+response = requests.get(URL, headers=headers)
 print(f"Status: {response.status_code}")
 print(f"Content length: {len(response.content)} bytes")
 print(f"First 100 characters: {response.content[:100]}")

@@ -16,13 +16,13 @@ import os
 import requests
 from google.transit import gtfs_realtime_pb2
 
-url = "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions"
+URL = "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions"
 headers = {
     "accept": "application/x-protobuf",
     "apiKey": os.environ["STM_API_KEY"],
 }
 
-response = requests.get(url, headers=headers)
+response = requests.get(URL, headers=headers)
 
 feed = gtfs_realtime_pb2.FeedMessage()
 feed.ParseFromString(response.content)

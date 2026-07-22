@@ -90,10 +90,10 @@ This example code:
 
 - Lines 1-6: Import required modules (`os`, `dash`, `plotly`, `requests`, and `gtfs_realtime_pb2`)
 - Lines 8-9: Define API endpoint URL and where the map should be centered
-- Lines 11-34: Fetch vehicle positions and parse the Protocol Buffer response. GTFS Realtime reports `position.speed` in meters per second, so the hover text multiplies by 3.6 for km/h.
-- Lines 36-43: Create Dash app with full-screen map layout. `dcc.Graph` displays the map, `dcc.Interval` refreshes the data every 10 seconds.
-- Lines 45-65: Define callback to update map every 10 seconds with vehicle positions. `Output("map", "figure")` declares that the return value updates the `figure` property of the map component. The `dcc.Interval`'s `n_intervals` is the input that triggers the callback, which calls `fetch_vehicles()` and builds a `Scattermap` figure. `uirevision="keep-view"` preserves zoom and pan across refreshes.
-- Lines 67-68: Run the app in debug mode
+- Lines 12-35: Fetch vehicle positions and parse the Protocol Buffer response. GTFS Realtime reports `position.speed` in meters per second, so the hover text multiplies by 3.6 for km/h.
+- Lines 38-45: Create Dash app with full-screen map layout. `dcc.Graph` displays the map, `dcc.Interval` refreshes the data every 10 seconds.
+- Lines 48-68: Define callback to update map every 10 seconds with vehicle positions. `Output("map", "figure")` declares that the return value updates the `figure` property of the map component. The `dcc.Interval`'s `n_intervals` is the input that triggers the callback, which calls `fetch_vehicles()` and builds a `Scattermap` figure. `uirevision="keep-view"` preserves zoom and pan across refreshes.
+- Lines 71-72: Run the app in debug mode
 
 ## Run it
 
